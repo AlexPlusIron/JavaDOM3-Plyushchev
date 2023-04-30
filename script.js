@@ -15,10 +15,10 @@ desk.addEventListener("mousemove", drawPoint);
 
 function drawPoint(e) {
 	console.log(e.type);
-    console.log(desk, e.offsetX, e.offsetY);
+    	console.log(desk, e.offsetX, e.offsetY);
 	switch (e.type) {
-		case "mousedown":
-			isDrawing = true;
+	case "mousedown":
+		isDrawing = true;
             
             if (e.offsetX >= 10 && e.offsetX <= 490){
                 old_point.setAttribute("style", "width: " + e.offsetX + "px;");
@@ -30,7 +30,7 @@ function drawPoint(e) {
                 else {
                     ptag.setAttribute("style", "left:" + (e.offsetX-10) + "px;");
                 }
-           	    break;
+           	break;
             }
             if (e.offsetX < 10) {
                 old_point.setAttribute("style", "width: " + e.offsetX + "px;");
@@ -48,11 +48,11 @@ function drawPoint(e) {
             }
 		
         case "mouseup":
-			isDrawing = false
-			break;
+		isDrawing = false
+		break;
 		
         case "mousemove":
-			if (isDrawing && e.offsetX >= 10 && e.offsetX <= 490) {
+		if (isDrawing && e.offsetX >= 10 && e.offsetX <= 490) {
                 old_point.setAttribute("style", "width: " + e.offsetX + "px;");
                 triangle.setAttribute("style", "left:" + (e.offsetX-10) + "px;");
                 ptag.textContent = Math.round((e.offsetX+1)/5);
@@ -77,16 +77,16 @@ function drawPoint(e) {
                
             }
 
-			break;
+	break;
 	}
 }
 
 
 function draw(el, x, y) {
 	const point = document.createElement("div");
-    point.className = "point";
-    point.style.width = x + "px";
-    el.append(point);
+    	point.className = "point";
+    	point.style.width = x + "px";
+    	el.append(point);
     
 }
 
